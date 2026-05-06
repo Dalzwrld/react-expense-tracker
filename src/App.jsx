@@ -1,8 +1,7 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import React, { useState } from 'react'
+import Filter from './components/filter'
+import Form from './components/form'
+import Table from './components/table'
 
 function App() {
   const [count, setCount] = useState(0)
