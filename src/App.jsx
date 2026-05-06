@@ -8,15 +8,26 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className=""> /**Container */
-      <div className=""> /**Heading */
+    <div className=""> {/**Container */}
+      <div className=""> {/**Heading */}
         <h1 className="">Expense tracker</h1>
         <h5 className="">Start taking control of your finances and life. Record, categorize and analyze your spending.</h5>
       </div>
 
       <div className="">
-        <div className=""></div> /**Form */
-        <div className=""></div> /**Expense filters & list */
+        <div className="">
+          <Form />
+        </div> {/**Form */}
+
+        <div className=""> {/**Expense filters & list */}
+          <div className="">
+            <Filter />
+          </div> {/**Filter */}
+
+          <div className="">
+            <Table />
+          </div> {/**List */}
+        </div> 
       </div>
     </div>
   )

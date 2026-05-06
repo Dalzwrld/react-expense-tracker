@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default function form() {
+function Form() {
   return (
     <form className="">
         <h3 className="">
@@ -17,7 +17,11 @@ export default function form() {
         <input type="number" placeholder="Enter amount" className="" />
         <input type="date" placeholder="dd/mm/yy" className="" />
 
-        <button className=""></button>
+        <button className="">
+            Submit
+        </button>
     </form>
   )
 }
+
+export default Form
