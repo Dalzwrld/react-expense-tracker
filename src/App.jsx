@@ -4,11 +4,9 @@ import Form from './components/form'
 import Table from './components/table'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className=""> {/**Container */}
-      <div className=""> {/**Heading */}
+      <div className="">
         <h1 className="">Expense tracker</h1>
         <h5 className="">Start taking control of your finances and life. Record, categorize and analyze your spending.</h5>
       </div>
