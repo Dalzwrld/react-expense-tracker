@@ -17,7 +17,6 @@ export default function table() {
     
                 <tbody className="">
                     <tr className="">
-                        <td className="">{expense.id}</td>
                         <td className="">{expense.name}</td>
                         <td className="">{expense.description}</td>
                         <td className="">{expense.category}</td>

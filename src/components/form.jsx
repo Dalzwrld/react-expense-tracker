@@ -18,11 +18,11 @@ export default function Form( expenses ) {
   return (
     <form className="border border-[#d8d8d8] rounded-2xl w-100 p-6 flex flex-col gap-4 shadow-[0_4px_12px_rgba(0,0,0,0.25)]">
         <div className="flex flex-col items-center justify-center gap-2">
-            <h3 className="font-bold text-2xl font-serif">
+            <h3 className="text-2xl font-(--font-headings)">
                 Add Expense
             </h3>
 
-            <h5 className="text-gray-800 font-medium">
+            <h5 className="text-gray-800 font-medium font-(font-sans)">
                 Enter your expense details below
             </h5>
         </div>

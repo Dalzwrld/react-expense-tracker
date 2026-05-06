@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-    --font-sans: "DM Sans", sans-serif;
-    --font-serif: "Instrument Serif", serif;
+    --font-body: "Open Sans", sans-serif;
+    --font-headings: "Barlow", sans-serif;
+    --font-title: "Old Standard TT", serif;
 }
