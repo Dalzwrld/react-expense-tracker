@@ -4,6 +4,8 @@ import Form from './components/form'
 import Table from './components/table'
 
 function App() {
+  const [expenses, setExpenses] = useState([]);
+  
   return (
     <div className=""> {/**Container */}
       <div className="">
