@@ -1,7 +1,7 @@
 import React from 'react'
 import { Search } from 'lucide-react'
 
-export default function filter() {
+export default function Filter() {
   return (
     <div className=''>
         <button className=''>

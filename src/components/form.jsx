@@ -5,7 +5,7 @@ export default function Form( expenses ) {
     name: "",
     description: "",
     category: "",
-    amount: "",
+    price: "",
     date: ""
   });
 
@@ -13,6 +13,12 @@ export default function Form( expenses ) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    console.log(expense);
+  }
+
+  function handleChange(event) {
+    const { name, value} = event.target;
+    setExpense({...expense, [name]: value});
   }
 
   return (
@@ -59,12 +65,12 @@ export default function Form( expenses ) {
         />
         <input 
             type="number" 
-            placeholder="Enter amount" 
+            placeholder="Enter price" 
             className="border border-gray-300 rounded-md p-2 outline-green-500" 
-            value={expense.amount} 
+            value={expense.price} 
             onChange={
                 (event) => 
-                {setExpense({...expense, amount: event.target.value})}
+                {setExpense({...expense, price: event.target.value})}
             } 
         />
         <input 
