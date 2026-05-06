@@ -16,19 +16,21 @@ export default function Form( expenses ) {
   }
 
   return (
-    <form className="border border-[#d8d8d8] rounded-2xl w-100 p-4 flex flex-col gap-4 shadow-[0_4px_12px_rgba(0,0,0,0.25)]">
-        <h3 className="font-bold text-2xl font-serif">
-            Add Expense
-        </h3>
+    <form className="border border-[#d8d8d8] rounded-2xl w-100 p-6 flex flex-col gap-4 shadow-[0_4px_12px_rgba(0,0,0,0.25)]">
+        <div className="flex flex-col items-center justify-center gap-2">
+            <h3 className="font-bold text-2xl font-serif">
+                Add Expense
+            </h3>
 
-        <h5 className="text-gray-800">
-            Enter your expense details below
-        </h5>
+            <h5 className="text-gray-800 font-medium">
+                Enter your expense details below
+            </h5>
+        </div>
 
         <input 
             type="text" 
             placeholder="Enter expense name" 
-            className="border rounded-md p-2 outline-indigo-500" 
+            className="border border-gray-300 rounded-md p-2 outline-green-500" 
             value={expense.name} 
             onChange={
                 (event) => 
@@ -38,7 +40,7 @@ export default function Form( expenses ) {
         <input 
             type="text" 
             placeholder="Enter expense description" 
-            className="border rounded-md p-2 outline-indigo-500" 
+            className="border border-gray-300 rounded-md p-2 outline-green-500" 
             value={expense.description} 
             onChange={
                 (event) => 
@@ -48,7 +50,7 @@ export default function Form( expenses ) {
         <input 
             type="text" 
             placeholder="Enter expense category" 
-            className="border rounded-md p-2 outline-indigo-500" 
+            className="border border-gray-300 rounded-md p-2 outline-green-500" 
             value={expense.category} 
             onChange={
                 (event) => 
@@ -58,7 +60,7 @@ export default function Form( expenses ) {
         <input 
             type="number" 
             placeholder="Enter amount" 
-            className="border rounded-md p-2 outline-indigo-500" 
+            className="border border-gray-300 rounded-md p-2 outline-green-500" 
             value={expense.amount} 
             onChange={
                 (event) => 
@@ -66,9 +68,8 @@ export default function Form( expenses ) {
             } 
         />
         <input 
-            type="date" 
-            placeholder="dd/mm/yy" 
-            className="border rounded-md p-2 outline-indigo-500" 
+            type="date"
+            className="border border-gray-300 rounded-md p-2 outline-green-500 placeholder:text-grey-300" 
             value={expense.date} 
             onChange={
                 (event) => 
@@ -76,7 +77,7 @@ export default function Form( expenses ) {
             } 
         />
 
-        <button type="submit" className="" onSubmit={handleSubmit}>
+        <button type="submit" className="border-none rounded-md p-2 w-full text-md bg-green-500 hover:bg-green-700 cursor-pointer" onSubmit={handleSubmit}>
             Submit
         </button>
     </form>
