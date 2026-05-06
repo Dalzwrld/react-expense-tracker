@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Form( expense ) {
+function Form() {
   const [expense, setExpense] = useState({
     name: "",
     description: "",
@@ -29,7 +29,7 @@ function Form( expense ) {
             type="text" 
             placeholder="Enter expense name" 
             className="" 
-            value={} 
+            value={expense.name} 
             onChange={
                 (event) => 
                 {setExpense({...expense, name: event.target.value})}
@@ -39,7 +39,7 @@ function Form( expense ) {
             type="text" 
             placeholder="Enter expense description" 
             className="" 
-            value={} 
+            value={expense.description} 
             onChange={
                 (event) => 
                 {setExpense({...expense, description: event.target.value})}
@@ -49,7 +49,7 @@ function Form( expense ) {
             type="text" 
             placeholder="Enter expense category" 
             className="" 
-            value={} 
+            value={expense.category} 
             onChange={
                 (event) => 
                 {setExpense({...expense, category: event.target.value})}
@@ -59,7 +59,7 @@ function Form( expense ) {
             type="number" 
             placeholder="Enter amount" 
             className="" 
-            value={} 
+            value={expense.amount} 
             onChange={
                 (event) => 
                 {setExpense({...expense, amount: event.target.value})}
@@ -69,14 +69,14 @@ function Form( expense ) {
             type="date" 
             placeholder="dd/mm/yy" 
             className="" 
-            value={} 
+            value={expense.date} 
             onChange={
                 (event) => 
                 {setExpense({...expense, date: event.target.value})}
             } 
         />
 
-        <button className="">
+        <button type="submit" className="" onSubmit={handleSubmit}>
             Submit
         </button>
     </form>
