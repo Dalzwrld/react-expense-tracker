@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Form( addExpense ) {
+function Form({ addExpense }) {
   const [formData, setFormData] = useState({
     name: "",
     description: "",
