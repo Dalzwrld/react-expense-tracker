@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 
 function Table() {
-  const [expenses, setExpenses] = useState([]);
-
   return (    
     <div className="">
         <table className="">

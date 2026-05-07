@@ -2,14 +2,6 @@ import React, { useState } from 'react'
 import { Search } from 'lucide-react'
 
 function Filter() {
-  const [searchExpense, setSearchExpense] = useState("");
-
-  const filteredExpenses = expenses.filter((expense) => {
-    return (
-      expense.name.includes(searchExpense) || expense.description.includes(searchExpense)
-    );
-  });
-
   return (
     <div className="">
       <Search className="w-2 h-2 object-cover" />

@@ -4,6 +4,19 @@ import Form from './components/form'
 import Table from './components/table'
 
 function App() {  
+  const [expenses, setExpenses] = useState([]);
+  const [searchExpense, setSearchExpense] = useState("");
+
+  function addExpense(newExpense) {
+    setExpenses([...expenses, newExpense]);
+  }
+
+  const filteredExpenses = expenses.filter((expense) => {
+    return (
+      expense.name.includes(searchExpense) || expense.description.includes(searchExpense)
+    );
+  });
+
   return (
     <div className="w-full h-screen flex flex-col px-40 py-5 gap-4 bg-[#f4f4f4]">
       <div className="w-full h-25 flex flex-col items-center justify-center gap-2 mb-5">
@@ -13,16 +26,19 @@ function App() {
 
       <div className="flex w-auto h-auto gap-2">
         <div className="">
-          <Form />
+          <Form addExpense={addExpense}/>
         </div>
 
         <div className="flex flex-col items-start w-auto h-auto gap-2">
           <div className="">
-            <Filter />
+            <Filter 
+              searchExpense={searchExpense}
+              setSearchExpense={setSearchExpense}
+            />
           </div>
 
           <div className="">
-            {/* <Table /> */}
+            <Table expenses={filteredExpenses}/>
           </div>
         </div> 
       </div>
