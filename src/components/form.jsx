@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-export default function Form( expenses ) {
-  const [expense, setExpense] = useState({
+export default function Form( addExpense ) {
+  const [formData, setFormData] = useState({
     name: "",
     description: "",
     category: "",
@@ -9,16 +9,17 @@ export default function Form( expenses ) {
     date: ""
   });
 
-  console.log(expense);
-
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(expense);
-  }
+    addExpense(formData);
 
-  function handleChange(event) {
-    const { name, value} = event.target;
-    setExpense({...expense, [name]: value});
+    setFormData({
+        name: "",
+        description: "",
+        category: "",
+        price: "",
+        date: ""
+    });
   }
 
   return (
@@ -37,49 +38,49 @@ export default function Form( expenses ) {
             type="text" 
             placeholder="Enter expense name" 
             className="border border-gray-300 rounded-md p-2 outline-green-500" 
-            value={expense.name} 
+            value={formData.name} 
             onChange={
                 (event) => 
-                {setExpense({...expense, name: event.target.value})}
+                {setFormData({...formData, name: event.target.value})}
             } 
         />
         <input 
             type="text" 
             placeholder="Enter expense description" 
             className="border border-gray-300 rounded-md p-2 outline-green-500" 
-            value={expense.description} 
+            value={formData.description} 
             onChange={
                 (event) => 
-                {setExpense({...expense, description: event.target.value})}
+                {setFormData({...formData, description: event.target.value})}
             } 
         />
         <input 
             type="text" 
             placeholder="Enter expense category" 
             className="border border-gray-300 rounded-md p-2 outline-green-500" 
-            value={expense.category} 
+            value={formData.category} 
             onChange={
                 (event) => 
-                {setExpense({...expense, category: event.target.value})}
+                {setFormData({...formData, category: event.target.value})}
             } 
         />
         <input 
             type="number" 
             placeholder="Enter price" 
             className="border border-gray-300 rounded-md p-2 outline-green-500" 
-            value={expense.price} 
+            value={formData.price} 
             onChange={
                 (event) => 
-                {setExpense({...expense, price: event.target.value})}
+                {setFormData({...formData, price: event.target.value})}
             } 
         />
         <input 
             type="date"
             className="border border-gray-300 rounded-md p-2 outline-green-500 placeholder:text-grey-300" 
-            value={expense.date} 
+            value={formData.date} 
             onChange={
                 (event) => 
-                {setExpense({...expense, date: event.target.value})}
+                {setFormData({...formData, date: event.target.value})}
             } 
         />
 

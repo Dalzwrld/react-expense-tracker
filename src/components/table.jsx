@@ -26,18 +26,18 @@ export default function Table() {
 
   return (    
     <div className="">
-        {expenses.map((expense) => {
-            <table className="">
-                <thead className="">
-                    <tr className="">
-                        <td className="Expense"></td>
-                        <td className="Description"></td>
-                        <td className="Category"></td>
-                        <td className="Price"></td>
-                        <td className="Date"></td>
-                    </tr>
-                </thead>    
+        <table className="">
+            <thead className="">
+                <tr className="">
+                    <td className="Expense"></td>
+                    <td className="Description"></td>
+                    <td className="Category"></td>
+                    <td className="Price"></td>
+                    <td className="Date"></td>
+                </tr>
+            </thead>    
     
+            {expenses.map((expense) => {
                 <tbody className="">
                     <tr className="">
                         <td className="">{expense.name}</td>
@@ -47,8 +47,8 @@ export default function Table() {
                         <td className="">{expense.date}</td>
                     </tr>
                 </tbody>
-            </table>
-        })}
+           })}
+        </table>
     </div>
   )
 }
