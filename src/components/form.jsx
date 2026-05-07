@@ -41,7 +41,7 @@ export default function Form( addExpense ) {
             value={formData.name} 
             onChange={
                 (event) => 
-                {setFormData({...formData, name: event.target.value})}
+                    {setFormData({...formData, name: event.target.value})}
             } 
         />
         <input 
@@ -51,7 +51,7 @@ export default function Form( addExpense ) {
             value={formData.description} 
             onChange={
                 (event) => 
-                {setFormData({...formData, description: event.target.value})}
+                    {setFormData({...formData, description: event.target.value})}
             } 
         />
         <input 
@@ -61,7 +61,7 @@ export default function Form( addExpense ) {
             value={formData.category} 
             onChange={
                 (event) => 
-                {setFormData({...formData, category: event.target.value})}
+                    {setFormData({...formData, category: event.target.value})}
             } 
         />
         <input 
@@ -71,7 +71,7 @@ export default function Form( addExpense ) {
             value={formData.price} 
             onChange={
                 (event) => 
-                {setFormData({...formData, price: event.target.value})}
+                    {setFormData({...formData, price: event.target.value})}
             } 
         />
         <input 
@@ -80,7 +80,7 @@ export default function Form( addExpense ) {
             value={formData.date} 
             onChange={
                 (event) => 
-                {setFormData({...formData, date: event.target.value})}
+                    {setFormData({...formData, date: event.target.value})}
             } 
         />
 
