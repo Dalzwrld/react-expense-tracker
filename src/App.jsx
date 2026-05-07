@@ -26,10 +26,10 @@ function App() {
 
       <div className="flex w-auto h-auto gap-2">
         <div className="">
-          <Form addExpense={addExpense}/>
+          <Form addExpense={addExpense} />
         </div>
 
-        <div className="flex flex-col items-start w-auto h-auto gap-2">
+        <div className="flex flex-col items-center w-auto h-auto gap-2 mx-8">
           <div className="">
             <Filter 
               searchExpense={searchExpense}
@@ -38,7 +38,7 @@ function App() {
           </div>
 
           <div className="">
-            <Table expenses={filteredExpenses}/>
+            <Table expenses={filteredExpenses} />
           </div>
         </div> 
       </div>

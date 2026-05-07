@@ -23,6 +23,8 @@ function Form( addExpense ) {
     });
   }
 
+  console.log(addExpense);
+
   return (
     <form className="border border-[#d8d8d8] rounded-2xl w-100 p-6 flex flex-col gap-4 shadow-[0_4px_12px_rgba(0,0,0,0.25)]" onSubmit={handleSubmit}>
         <div className="flex flex-col items-center justify-center gap-2">

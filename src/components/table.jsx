@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Table() {
+function Table({ expenses }) {
   return (    
     <div className="">
         <table className="">
