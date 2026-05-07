@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Search } from 'lucide-react'
 
-export default function Filter() {
+function Filter() {
   const [searchExpense, setSearchExpense] = useState("");
 
   const filteredExpenses = expenses.filter((expense) => {
@@ -27,3 +27,5 @@ export default function Filter() {
     </div>
   )
 }
+
+export default Filter

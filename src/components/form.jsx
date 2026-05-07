@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function Form( addExpense ) {
+function Form( addExpense ) {
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -100,3 +100,5 @@ export default function Form( addExpense ) {
     </form>
   )
 }
+
+export default Form

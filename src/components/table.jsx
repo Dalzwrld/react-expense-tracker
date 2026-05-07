@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function Table() {
+function Table() {
   const [expenses, setExpenses] = useState([]);
 
   return (    
@@ -31,3 +31,5 @@ export default function Table() {
     </div>
   )
 }
+
+export default Table

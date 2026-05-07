@@ -18,7 +18,7 @@ function App() {
 
         <div className="flex flex-col items-start w-auto h-auto gap-2">
           <div className="">
-            {/* <Filter /> */}
+            <Filter />
           </div>
 
           <div className="">
