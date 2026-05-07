@@ -2,7 +2,13 @@ import React, { useState } from 'react'
 import { Search } from 'lucide-react'
 
 export default function Filter() {
-  const [searchExpense, setSearchExpense] = useState([]);
+  const [searchExpense, setSearchExpense] = useState("");
+
+  const filteredExpenses = expenses.filter((expense) => {
+    return (
+      expense.name.includes(searchExpense) || expense.description.includes(searchExpense)
+    );
+  });
 
   return (
     <div className="">
@@ -10,8 +16,8 @@ export default function Filter() {
 
       <input 
         type="text" 
-        placeholder="Search Expenses" 
-        className="border rounded-md p-2 flex w-10 h-5 gap-1 text-sm font-(--font-sans) text-gray-600"
+        placeholder="Search Expenses..." 
+        className="border rounded-md p-2 flex w-20 h-5 gap-1 text-sm font-(--font-sans) text-gray-600"
         value={searchExpense}
         onChange={
           (event) => 

@@ -11,6 +11,7 @@ export default function Form( addExpense ) {
 
   function handleSubmit(event) {
     event.preventDefault();
+
     addExpense(formData);
 
     setFormData({
@@ -22,8 +23,12 @@ export default function Form( addExpense ) {
     });
   }
 
+//   function addExpense(newExpense) {
+//     setExpenses([...expenses, newExpense]);
+//   }
+
   return (
-    <form className="border border-[#d8d8d8] rounded-2xl w-100 p-6 flex flex-col gap-4 shadow-[0_4px_12px_rgba(0,0,0,0.25)]">
+    <form className="border border-[#d8d8d8] rounded-2xl w-100 p-6 flex flex-col gap-4 shadow-[0_4px_12px_rgba(0,0,0,0.25)]" onSubmit={handleSubmit}>
         <div className="flex flex-col items-center justify-center gap-2">
             <h3 className="text-2xl font-(--font-headings)">
                 Add Expense
@@ -42,7 +47,8 @@ export default function Form( addExpense ) {
             onChange={
                 (event) => 
                     {setFormData({...formData, name: event.target.value})}
-            } 
+            }
+            required
         />
         <input 
             type="text" 
@@ -52,7 +58,8 @@ export default function Form( addExpense ) {
             onChange={
                 (event) => 
                     {setFormData({...formData, description: event.target.value})}
-            } 
+            }
+            required 
         />
         <input 
             type="text" 
@@ -62,7 +69,8 @@ export default function Form( addExpense ) {
             onChange={
                 (event) => 
                     {setFormData({...formData, category: event.target.value})}
-            } 
+            }
+            required 
         />
         <input 
             type="number" 
@@ -72,7 +80,8 @@ export default function Form( addExpense ) {
             onChange={
                 (event) => 
                     {setFormData({...formData, price: event.target.value})}
-            } 
+            }
+            required 
         />
         <input 
             type="date"
@@ -81,10 +90,11 @@ export default function Form( addExpense ) {
             onChange={
                 (event) => 
                     {setFormData({...formData, date: event.target.value})}
-            } 
+            }
+            required 
         />
 
-        <button type="submit" className="border-none rounded-md p-2 w-full text-md bg-green-500 hover:bg-green-700 cursor-pointer" onSubmit={handleSubmit}>
+        <button type="submit" className="border-none rounded-md p-2 w-full text-md bg-green-500 hover:bg-green-700 cursor-pointer">
             Submit
         </button>
     </form>

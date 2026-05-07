@@ -1,28 +1,7 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 export default function Table() {
   const [expenses, setExpenses] = useState([]);
-
-  useEffect(() => {
-    setExpenses([
-        {
-            name: "Smocha",
-            description: "Wednesday's lunch",
-            category: "Food",
-            price: "90",
-            date: "05/06/2026"
-        },
-
-        {
-            name: "Atomic Habits",
-            description: "Add to book collection",
-            category: "Books",
-            amount: "600",
-            date: "04/30/2026"
-        }
-    ]);
-  }, []);
 
   return (    
     <div className="">
@@ -37,17 +16,17 @@ export default function Table() {
                 </tr>
             </thead>    
     
-            {expenses.map((expense) => {
-                <tbody className="">
-                    <tr className="">
+            <tbody className="">
+                {expenses.map((expense, index) => {
+                    <tr key={index} className="">
                         <td className="">{expense.name}</td>
                         <td className="">{expense.description}</td>
                         <td className="">{expense.category}</td>
                         <td className="">{expense.price}</td>
                         <td className="">{expense.date}</td>
                     </tr>
-                </tbody>
-           })}
+                })}
+            </tbody>
         </table>
     </div>
   )

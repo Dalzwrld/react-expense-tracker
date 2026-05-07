@@ -3,9 +3,7 @@ import Filter from './components/filter'
 import Form from './components/form'
 import Table from './components/table'
 
-function App() {
-  const [expense, setExpense] = useState([]);
-  
+function App() {  
   return (
     <div className="w-full h-screen flex flex-col px-40 py-5 gap-4 bg-[#f4f4f4]">
       <div className="w-full h-25 flex flex-col items-center justify-center gap-2 mb-5">
@@ -24,7 +22,7 @@ function App() {
           </div>
 
           <div className="">
-            <Table />
+            {/* <Table /> */}
           </div>
         </div> 
       </div>
