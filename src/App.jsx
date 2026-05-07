@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Filter from './components/filter'
 import Form from './components/form'
 import Table from './components/table'
@@ -7,15 +7,25 @@ function App() {
   const [expenses, setExpenses] = useState([]);
   const [searchExpense, setSearchExpense] = useState("");
 
-  function addExpense(newExpense) {
-    setExpenses([...expenses, newExpense]);
-  }
-
   const filteredExpenses = expenses.filter((expense) => {
     return (
-      expense.name.includes(searchExpense) || expense.description.includes(searchExpense)
+      expense.name?.toLowerCase().includes(searchExpense.toLowerCase()) || expense.description?.toLowerCase().includes(searchExpense.toLowerCase())
     );
   });
+
+  function addExpense(newExpense) {
+    fetch("http://localhost:3000/expenses", {
+      method: "POST",
+      headers: {
+        "Content-Type" : "application.json",
+      },
+      body: JSON.stringify(newExpense),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setExpenses([...expenses, data]);
+      });  
+  }
 
   return (
     <div className="w-full h-screen flex flex-col px-40 py-5 gap-4 bg-[#f4f4f4]">

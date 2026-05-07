@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Form({ addExpense }) {
   const [formData, setFormData] = useState({
@@ -11,10 +11,11 @@ function Form({ addExpense }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-
-    addExpense(formData);
-
-    setFormData({
+      console.log("SENDING:", formData);
+    
+      addExpense(formData);
+        
+      setFormData({
         name: "",
         description: "",
         category: "",
@@ -22,8 +23,6 @@ function Form({ addExpense }) {
         date: ""
     });
   }
-
-  console.log(addExpense);
 
   return (
     <form className="border border-[#d8d8d8] rounded-2xl w-100 p-6 flex flex-col gap-4 shadow-[0_4px_12px_rgba(0,0,0,0.25)]" onSubmit={handleSubmit}>

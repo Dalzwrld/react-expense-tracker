@@ -1,6 +1,15 @@
 import React from 'react'
 
 function Table({ expenses }) {
+    function handleData() {
+        useEffect(() => {
+            fetch('http://localhost:3000/expenses')
+            .then((res) => res.json())
+            .then((data) => setExpenses(data))
+            .catch((err) => console.error(err));
+        }, []);
+    }
+
   return (    
     <div className="">
         <table className="">
